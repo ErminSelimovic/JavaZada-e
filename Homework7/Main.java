@@ -17,7 +17,7 @@ public class Main {
         String strNumber1 = "2022";
         String strNumber2 = "20nn";
         boolean ceckIsDigit1 = isNumberic(strNumber1);
-        boolean ceclOsDogot2 = isNumberic(strNumber2);
+        boolean ceclOsDigit2 = isNumberic(strNumber2);
 
         if (ceckIsDigit1) {
             System.out.println("String je numerički i njegova vrijednost je "+strNumber1);
@@ -25,7 +25,7 @@ public class Main {
             System.out.println("String nije numerički i on izgleda ovako "+strNumber1);
         }
 
-        if (ceclOsDogot2) {
+        if (ceclOsDigit2) {
             System.out.println("String je numerički i njegova vrijednost je "+strNumber2);
         } else {
             System.out.println("String nije numerički i on izgleda ovako "+strNumber2);
