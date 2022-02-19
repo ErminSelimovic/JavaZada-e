@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+
 import static java.lang.String.valueOf;
 
 public class Main {
@@ -35,8 +36,9 @@ public class Main {
         System.out.print("\nUnesite jedan string: ");
         scanner.nextLine();
         String stringText = scanner.nextLine();
-        System.out.println("Dužina stringa je " + stringText.length() + " slova\n" +
-                "a korijen iz " + stringText.length() + " je " + Math.sqrt(stringText.length()));
+        int stringLength = stringText.length();
+        System.out.println("Dužina stringa je " + stringLength + " slova\n" +
+                "a korijen iz " + stringLength + " je " + Math.sqrt(stringText.length()));
 
         System.out.print("\nUnesite jedan (long) broj: ");
         long longNum = scanner.nextLong();
