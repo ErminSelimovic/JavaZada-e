@@ -5,18 +5,44 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Unesite jednu riječ: ");
         String text = scanner.nextLine();
 
-        if (text.contains("Naj") || text.contains("naj")) {
+
+        //Prvi način
+        if (text.substring(0,3).contains("Naj") || text.substring(0,3).contains("naj")){
             System.out.println("You are using a superlative in Bosnian");
+        }else{
+            System.out.println("It's a regular word.");
+        }
+
+        //Drugi način
+        /*
+        text=text.toUpperCase();
+        boolean prvaTriSlova = text.startsWith("NAJ");
+        if (prvaTriSlova){
+            System.out.println("You are using a superlative in Bosnian");
+        }else{
+            System.out.println("It's a regular word.");
+        }
+        */
+
+        /*
+        Treći, najkomplikovaniji način
+
+        if (text.charAt(0) == 'n' || text.charAt(0) == 'N') {
+            if (text.charAt(1) == 'a' || text.charAt(1) == 'A') {
+                if (text.charAt(2) == 'j' || text.charAt(2) == 'J') {
+                    System.out.println("You are using a superlative in Bosnian");
+                }
+            }
         } else {
             System.out.println("It's a regular word, " + text);
         }
-    
-    
+        */
+
 
         System.out.println("Unesite 5 bojeva do 10");
         System.out.print("Prvi: ");
@@ -51,8 +77,8 @@ public class Main {
                 System.out.println("The average is 10, you are pass the exam, yours exam was briliant.");
                 break;
         }
-    
-    
+
+
         double weight, height;
 
         System.out.print("\nUnesite vaše kilograme\nKilogrami(kg)(npr.82.2): ");
