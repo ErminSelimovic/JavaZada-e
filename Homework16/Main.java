@@ -37,7 +37,7 @@ public class Main {
 
         System.out.println("\nNiz koji ste unjeli izgleda ovako");
         System.out.println(Arrays.deepToString(arrNum));
-        System.out.println("Zbir svih parnih brojeva niza je: " + sum + " , a kvadratni korijen zbira je: " + (int) (Math.pow(sum, 2)));
+        System.out.println("Zbir svih parnih brojeva niza je: " + sum + " , a kvadratni korijen zbira je: " + (Math.sqrt(sum)));
 
         //TREĆI ZADATAK
         System.out.print("\nMolimo Vas da unesete broj za koji želite tablicu množenja do 10\nVaš broj: ");
