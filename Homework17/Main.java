@@ -22,7 +22,9 @@ public class Main {
 
         int sum = 0;
         for (int num : nums) {
-            sum += num;
+            if (num % 2 != 0 && num > 1) {
+                sum += num;
+            }
         }
         System.out.printf("Suma niza je: %d", sum);
 
