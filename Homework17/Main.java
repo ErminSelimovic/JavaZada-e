@@ -26,7 +26,7 @@ public class Main {
                 sum += num;
             }
         }
-        System.out.printf("Suma niza je: %d", sum);
+        System.out.printf("Suma niza neparnih brojeva je: %d", sum);
 
 
         //Drugi zadatak
