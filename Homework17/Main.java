@@ -22,7 +22,7 @@ public class Main {
 
         int sum = 0;
         for (int num : nums) {
-            if (num % 2 != 0 && num > 1) {
+            if (num % 2 != 0) {
                 sum += num;
             }
         }
