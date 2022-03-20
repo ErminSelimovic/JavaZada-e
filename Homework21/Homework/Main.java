@@ -9,8 +9,15 @@ public class Main {
     public static void main(String[] args) {
 
         Map<String, String> gradIDrzava = new HashMap<>();
+
+        dodajGradiDrzavu(gradIDrzava);
+        provjeraGrada(gradIDrzava);
+
+    }
+
+    //METODE
+    private static void dodajGradiDrzavu(Map<String, String> gradIDrzava) {
         Scanner scan = new Scanner(System.in);
-        
         int izbor;
         do {
             System.out.print("Unesite grad: ");
@@ -37,10 +44,6 @@ public class Main {
             }
 
         } while (izbor == 1);
-
-
-        provjeraGrada(gradIDrzava);
-
     }
 
     private static void provjeraGrada(Map<String, String> gradIDrzava) {
@@ -50,8 +53,8 @@ public class Main {
         for (String gradFind : gradIDrzava.keySet()) {
             if (gradFind.equals(posjetitiGrad)) {
                 System.out.printf("Odlično, vaš grad %s se nalazi u %s", gradFind, gradIDrzava.get(gradFind));
-            } else {
-                System.out.printf("Vaš grad %s se ne nalazi u našoj bazi!", posjetitiGrad);
+            }else{
+                System.out.printf("Vaš unos %s se ne nalazi u našoj bazi!", posjetitiGrad);
             }
             break;
         }
