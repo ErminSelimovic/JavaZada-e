@@ -1,30 +1,29 @@
 package com.company;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Map<String, String> gradIDrzava = new HashMap<>();
+        HashMap<String, String> dodajGradiDrzavu = dodajGradiDrzavu();
 
-        dodajGradiDrzavu(gradIDrzava);
-        provjeraGrada(gradIDrzava);
+        provjeraGrada(dodajGradiDrzavu);
 
     }
 
     //METODE
-    private static void dodajGradiDrzavu(Map<String, String> gradIDrzava) {
+    private static HashMap<String, String>dodajGradiDrzavu() {
         Scanner scan = new Scanner(System.in);
+        HashMap<String, String> dodajGradiDrzavu = new HashMap<>();
         int izbor;
         do {
             System.out.print("Unesite grad: ");
             String grad = scan.nextLine();
             System.out.print("Unesite državu: ");
             String drzava = scan.nextLine();
-            gradIDrzava.put(grad, drzava);
+            dodajGradiDrzavu.put(grad, drzava);
             System.out.println("\n1. Dodaj novi unos\n0. Završi unos");
             izbor = scan.nextInt();
 
@@ -44,19 +43,24 @@ public class Main {
             }
 
         } while (izbor == 1);
+        return dodajGradiDrzavu;
     }
 
-    private static void provjeraGrada(Map<String, String> gradIDrzava) {
+    private static void provjeraGrada(HashMap<String, String> dodajGradiDrzavu) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Koji grad želite posjetiti?");
         String posjetitiGrad = scan.nextLine();
-        for (String gradFind : gradIDrzava.keySet()) {
+        boolean postoji = false;
+        for (String gradFind : dodajGradiDrzavu.keySet()) {
             if (gradFind.equals(posjetitiGrad)) {
-                System.out.printf("Odlično, vaš grad %s se nalazi u %s", gradFind, gradIDrzava.get(gradFind));
-            }else{
-                System.out.printf("Vaš unos %s se ne nalazi u našoj bazi!", posjetitiGrad);
+                System.out.printf("Odlično, vaš grad %s se nalazi u %s", gradFind, dodajGradiDrzavu.get(gradFind));
+                postoji = true;
+                break;
             }
-            break;
         }
+        if (!postoji){
+            System.out.printf("Vaš unos %s se ne nalazi u našoj bazi!", posjetitiGrad);
+        }
+
     }
 }
