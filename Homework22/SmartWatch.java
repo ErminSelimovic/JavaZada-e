@@ -26,7 +26,7 @@ public class SmartWatch {
 
     public void isConnected(){
         if (!bluetoothConnect){
-            System.out.printf("%s nije konektovan\nŽelite li konektovati\n", imeSata);
+            System.out.printf("\nŽelite li konektovati %s\n", imeSata);
             System.out.println("0-> NO  | 1-> YES\n");
             System.out.print("Odabir: ");
             int unos = scan.nextInt();
@@ -44,19 +44,17 @@ public class SmartWatch {
                     isConnected();
                 }
             }
-        }else{
-            System.out.printf("Vaš %s je konektovan",imeSata);
         }
     }
 
     public void showTime(){
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss\n");
-        System.out.printf("Trenutno vrijeme je %s", (formatter.format(time)));
+        System.out.printf("\nTrenutno vrijeme je %s", (formatter.format(time)));
     }
 
     public void showDate(){
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy\n");
-        System.out.printf("Trenutni datum je %s", (formatter.format(time)));
+        System.out.printf("\nTrenutni datum je %s", (formatter.format(time)));
     }
 
     public void dodatneOpcije(){
@@ -99,12 +97,16 @@ public class SmartWatch {
     }
 
     private void playMusic() {
+        System.out.println("*************************");
         System.out.println("Trenutno nema dodanih pjesama!");
+        System.out.println("*************************");
         dodatneOpcije();
     }
 
     private void showWeather() {
+        System.out.println("*************************");
         System.out.println("Vrijeme je odlično!");
+        System.out.println("*************************");
         dodatneOpcije();
     }
 
